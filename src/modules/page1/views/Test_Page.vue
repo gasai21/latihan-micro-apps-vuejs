@@ -25,10 +25,7 @@
         </nav>
 
         <div class="container">
-            <!-- <b-button variant="success" @click="addValue">Add Value</b-button>
-            <br><br>
-            <b-button variant="info" @click="gotopage2">Go to page2</b-button> -->
-
+            
             <div class="row">
                 <div class="col-md-4" style="margin-top:10px;margin-bottom: 10px;" v-for="data in products" :key="data.id">
                     <div class="card" style="width: 100%;">
@@ -55,12 +52,6 @@ export default {
             dataProducts:[]
         }
     },
-    created(){
-        // this.GET_DATA_API();
-
-        // this.$store.dispatch('page1/getDataApi');
-        // this.dataProducts = this.$store.state.page1.products;
-    },
     computed:{
         ...mapState([
             'products',
@@ -69,24 +60,8 @@ export default {
             return this.$store.state.page1.products;
         }
     },
-    updated(){
-        // this.$store.dispatch('page1/getDataApi');
-        // this.dataProducts = this.$store.commit('page1/GET_DATA_PRODUCTS');
-    },
     mounted(){
-        // this['page1/getDataApi']();
-        // this.$store.dispatch('page1/getDataApi');
-        // this.dataProducts = this.$store.state.page1.products;
-        // this.dataProducts = this.$store.getters.getProducts;
-
-        // this.dataProducts = this.$store.dispatch('page1/getDataApi');
-
-        // this.getDataAPI();
-
-
-
-        // this.dataProducts = this.products;
-
+        
         this.$store.dispatch('page1/getDataApi');
     },
     methods:{
@@ -97,26 +72,12 @@ export default {
             this.$store.commit('page1/ADD_ITEM', "data");
             console.log("Berhasil");
         },
-        // ...mapActions(["page1/getDataApi"]),
         getDataAPI(){
-            // this.$store.commit('page1/GET_DATA_API');
-
-            // console.log(this.$store.commit('page1/GET_DATA_API'));
-
-            // this.$store.dispatch('page1/GET_DATA_API');
-
-
-            // this.dataProducts = this.$store.commit('page1/GET_DATA_PRODUCTS');
-
+        
             this['page1/getDataApi']();
 
-            // this.dataProducts = this.$store.state.page1.products;
-
-            // console.log(this.dataProducts);
+        
         },
-        // ...mapActions([
-        //   'page1/getDataApi'
-        // ])
     }
 }
 </script>
